@@ -20,8 +20,8 @@
     "cross-env": "^7.0.3",
     "electron-is-dev": "^2.0.0",
     "ffmpeg-static": "^5.0.2",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
@@ -59,14 +59,14 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^7.2.1",
-    "electron": "^19.0.4",
+    "concurrently": "^7.3.0",
+    "electron": "^19.0.8",
     "electron-builder": "^23.1.0",
     "wait-on": "^6.0.1"
   },
   "build": {
-    "appId": "com.micahlindley.superadmin",
-    "productName": "SuperAdmin",
+    "appId": "com.micahlindley.transforma",
+    "productName": "Transforma",
     "win": {
       "target": "msi"
     },
