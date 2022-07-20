@@ -1,0 +1,113 @@
+@import "~@blueprintjs/core/lib/css/blueprint.css";
+@import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+}
+
+#root {
+  height: 100vh;
+  background-color: #1c2127;
+  padding: 2em;
+}
+
+.dropzone {
+  height: 100%;
+  width: 100%;
+  border: 5px dashed #2f343c;
+  border-radius: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: 150ms;
+}
+
+.dropzone.hovering {
+  border: 5px dashed #5f6b7c;
+}
+
+.bigIcon {
+  margin-bottom: 1rem;
+  transition: 150ms;
+}
+
+.uploadText {
+  color: #2f343c;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  transition: 150ms;
+}
+
+.hovering .uploadText {
+  color: #5f6b7c;
+}
+
+.appName {
+  position: fixed;
+  bottom: 2.75rem;
+  right: 2.75rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #2f343c;
+  font-size: 1.5rem;
+}
+
+.centerAll {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+svg[data-icon="folder-open"] {
+  margin: auto;
+}
+
+.bigCard {
+  max-width: 500px;
+  max-height: 350px;
+  width: 90vw;
+  height: 70vh;
+}
+
+.cardHeader {
+  color: #8abbff;
+  margin-bottom: 1rem;
+}
+
+.setting {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.settingLabel {
+  margin-right: 0.7rem;
+  font-weight: bold;
+}
+
+.backButton {
+  margin-bottom: 0.25rem;
+}
+
+.terminal {
+  white-space: pre-wrap;
+  overflow-x: hidden;
+  height: 140px;
+}
+
+.stderr {
+  color: #e76a6e;
+}

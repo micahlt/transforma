@@ -1,0 +1,75 @@
+{
+  "name": "transforma",
+  "version": "0.1.0",
+  "main": "public/electron.js",
+  "author": {
+    "name": "Micah Lindley",
+    "email": "hi@micahlindley.com",
+    "url": "https://micahlindley.com"
+  },
+  "description": "Manage WordPress sites in bulk",
+  "private": true,
+  "dependencies": {
+    "@blueprintjs/core": "^4.6.0",
+    "@blueprintjs/select": "^4.4.2",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "classnames": "^2.3.1",
+    "copy-to-clipboard-ultralight": "^1.0.15",
+    "cross-env": "^7.0.3",
+    "electron-is-dev": "^2.0.0",
+    "ffmpeg-static": "^5.0.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "prod": "npm run build && npm run electron:build",
+    "electron": "wait-on tcp:3000 && electron .",
+    "electron:dev": "concurrently -k \"cross-env BROWSER=none npm start\" \"npm:electron\"",
+    "electron:build": "electron-builder"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "rules": {
+      "eqeqeq": "off",
+      "jsx-a11y/anchor-is-valid": "off"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.1",
+    "electron": "^19.0.4",
+    "electron-builder": "^23.1.0",
+    "wait-on": "^6.0.1"
+  },
+  "build": {
+    "appId": "com.micahlindley.superadmin",
+    "productName": "SuperAdmin",
+    "win": {
+      "target": "msi"
+    },
+    "icon": "./public/logo512.png"
+  }
+}
