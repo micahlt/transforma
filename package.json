@@ -2,6 +2,7 @@
   "name": "transforma",
   "version": "0.1.0",
   "main": "public/electron.js",
+  "homepage": "./",
   "author": {
     "name": "Micah Lindley",
     "email": "hi@micahlindley.com",
@@ -10,19 +11,19 @@
   "description": "Manage WordPress sites in bulk",
   "private": true,
   "dependencies": {
-    "@blueprintjs/core": "^4.6.0",
-    "@blueprintjs/select": "^4.4.2",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
+    "@blueprintjs/core": "^4.13.0",
+    "@blueprintjs/select": "^4.8.12",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "classnames": "^2.3.1",
+    "classnames": "^2.3.2",
     "copy-to-clipboard-ultralight": "^1.0.15",
     "cross-env": "^7.0.3",
     "electron-is-dev": "^2.0.0",
-    "ffmpeg-static": "^5.0.2",
+    "ffmpeg-static": "^5.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0",
+    "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -59,16 +60,33 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^7.3.0",
-    "electron": "^19.0.8",
-    "electron-builder": "^23.1.0",
+    "concurrently": "^7.6.0",
+    "electron": "^19.1.9",
+    "electron-builder": "^23.6.0",
     "wait-on": "^6.0.1"
   },
   "build": {
     "appId": "com.micahlindley.transforma",
     "productName": "Transforma",
     "win": {
-      "target": "msi"
+      "target": "msi",
+      "files": [
+        "**/*",
+        "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+        "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+        "!**/node_modules/*.d.ts",
+        "!**/node_modules/.bin",
+        "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
+        "!.editorconfig",
+        "!**/._*",
+        "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
+        "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
+        "!**/{appveyor.yml,.travis.yml,circle.yml}",
+        "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}"
+      ],
+      "extraResources": [
+        "node_modules/ffmpeg-static/**"
+      ]
     },
     "icon": "./public/logo512.png"
   }
